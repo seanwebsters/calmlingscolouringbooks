@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fbf7f0;
+  --color-cream-deep: #f4ede1;
+  --color-paper: #fffdf9;
+  --color-navy: #1f2a44;
+  --color-navy-soft: #4a5570;
+  --color-mist: #8a93a8;
+  --color-line: #e8e0d2;
+  --color-sage: #cfe3d6;
+  --color-sage-deep: #5f8a72;
+  --color-lavender: #dcd6f0;
+  --color-lavender-deep: #6d5fa6;
+  --color-peach: #f6dccb;
+  --color-peach-deep: #b8674a;
+  --color-sky: #d6e6f2;
+  --color-sky-deep: #3f6f94;
+  --color-rose: #f3d3d6;
+  --color-rose-deep: #a8434f;
+
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --shadow-soft: 0 1px 2px rgb(31 42 68 / 0.04), 0 8px 24px -12px rgb(31 42 68 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(31 42 68 / 0.05), 0 18px 40px -18px rgb(31 42 68 / 0.25);
+}
+
+html {
+  background: var(--color-cream);
+  color: var(--color-navy);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: var(--color-lavender);
+}
+
+.field {
+  @apply w-full rounded-xl border border-line bg-paper px-3.5 py-2.5 text-[15px] text-navy shadow-[inset_0_1px_2px_rgb(31_42_68/0.04)] outline-none transition placeholder:text-mist focus:border-lavender-deep/50 focus:ring-4 focus:ring-lavender/60;
+}
+
+.label {
+  @apply mb-1.5 block text-[13px] font-medium tracking-wide text-navy-soft;
+}
+
+/* Cover typography preview — mirrors COVER_TYPE in lib/pdf.ts. */
+.cover-frame {
+  container-type: inline-size;
+}
+.cover-title {
+  font-size: 8.5cqw;
+  line-height: 1.12;
+}
+.cover-subtitle {
+  font-size: 3.6cqw;
+  line-height: 1.12;
+}
